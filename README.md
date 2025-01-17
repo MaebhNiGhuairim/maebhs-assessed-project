@@ -1,7 +1,7 @@
-# Project Title
+# The Yoga Loft
 
 ## Overview
-[Briefly describe the purpose of the project, the problem it solves, and its value to users.]
+The Yoga Loft is a web application designed to simplify yoga class scheduling and booking for students of the studio. This Django-powered website provides an intuitive, user-friendly interface where yoga enthusiasts can easily browse class schedules, create personal accounts, and seamlessly reserve spots in their preferred yoga sessions. By offering real-time booking capabilities, detailed class descriptions, and a streamlined registration process, The Yoga Loft Booking Platform eliminates traditional scheduling barriers, making it convenient for students to explore and commit to their wellness journey, which in turn improves class numbers.
 
 ## UX Design Process
 - **Link to User Stories in GitHub Projects:**
