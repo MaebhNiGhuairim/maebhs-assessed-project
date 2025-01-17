@@ -5,7 +5,8 @@ The Yoga Loft is a web application designed to simplify yoga class scheduling an
 
 ## UX Design Process
 - **Link to User Stories in GitHub Projects:**
-  - [Add a link to the GitHub Projects kanban board.]
+  - [The project's KanBan board.](https://github.com/users/MaebhNiGhuairim/projects/5)
+  - I used Perplexity to brainstorm some user ideas, but I sorted through them, selected and modified the most relevant user stories for this project.
 - **Wireframes:**
   - [Attach or link to accessible wireframes used in the design process, ensuring high colour contrast and alt text for visual elements.]
   - [Explain the rationale behind the layout and design choices, focusing on usability and accessibility for all users, including those using assistive technologies.]
