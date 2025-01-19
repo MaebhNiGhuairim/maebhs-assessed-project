@@ -1,0 +1,28 @@
+.hero {
+    background-image: url('https://example.com/yoga-background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+.about {
+    padding: 50px 0;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+.navbar .navbar-nav .nav-link{
+    padding: 0 1em;
+}
+
+.nav-link {
+    color: black;
+    font-size: large;
+
+}
