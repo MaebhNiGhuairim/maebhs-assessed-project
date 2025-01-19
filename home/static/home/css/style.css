@@ -1,17 +1,10 @@
-.hero {
-    background-image: url('https://example.com/yoga-background.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: black;
-}
 
-.about {
-    padding: 50px 0;
+
+
+/* Navbar */
+.navbar {
+    min-height: 65px;
+    align-items: center;
 }
 
 .navbar-nav {
@@ -25,4 +18,21 @@
     color: black;
     font-size: large;
 
+}
+
+.hero {
+    background: url('../images/hero-image.jpg') no-repeat center center/cover;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+.about {
+    padding: 50px 0;
 }
