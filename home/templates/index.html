@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
         <a class="navbar-brand d-lg-none mx-auto" href="#">The Yoga Loft</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -19,19 +19,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home</span></a>
+              <a class="nav-link" href="#">Schedule</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">About</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link d-none d-lg-block" href="#">The Yoga Loft</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#">Book a class!</a>
             </li>
           </ul>
         </div>
@@ -40,16 +40,52 @@
 
     <section class="hero">
         <div class="container">
-            <h1 class="display-4">Welcome to The Yoga Loft</h1>
-            <p class="lead">Find your inner peace through the practice of yoga</p>
-            <a href="#" class="btn btn-primary btn-lg">Book a Class</a>
+            <h1 class="display-4">Breathe, flow, transform</h1>
+            <div class="custom-shape-divider-bottom-1737311119">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
         </div>
     </section>
 
     <section class="about">
         <div class="container">
             <h2 class="text-center mb-4">About Us</h2>
-            <p>The Yoga Loft is a peaceful haven where you can explore the transformative power of yoga. Our experienced instructors guide you through various styles of yoga, helping you improve your physical strength, flexibility, and mental well-being.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <p class="text-center">Nestled in the heart of our vibrant community, we believe that yoga is more than just a workout—it's a journey of self-discovery and joy. Our passionate instructors are here to guide you through each pose with warmth and laughter, helping you find your flow while connecting with like-minded souls. Whether you're a seasoned yogi or just starting your journey, our diverse classes cater to all levels. Join us on the mat, breathe deeply, and let the magic of yoga uplift your spirit and calm your mind. 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="schedule">
+        <div class="container">
+            <h2 class="text-center mb-4">Class Schedule</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'home/images/yoga-class-1.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"></h5>
+                            <p class="card-text">Join us for a relaxing Hatha yoga class that focuses on gentle stretching and breathing exercises.</p>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{% static 'home/images/yoga-class-2.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title
+                            "></h5>
+                                <p class="card-text">Experience the energizing power of Vinyasa yoga, a dynamic practice that combines breath with movement.</p>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
