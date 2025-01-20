@@ -24,15 +24,33 @@
     font-size: 25px;
     color: white;
 }
-.navbar-toggler {
-    border-color: white;
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
     color: white;
 }
+
 
 .logo {
     font-size: 50px;
     white-space: nowrap;
     color: white;
+}
+
+/* book a class button */
+.custom-btn {
+    background-color: #9C9B8E; /* Custom background color */
+    border-color: #4F6757; /* Custom border color */
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+.custom-btn:hover {
+    background-color: #F4F0EB; /* Custom hover background color */
+    border-color: #4F6757; /* Custom hover border color */
+    color: #4F6757;
 }
 
 
