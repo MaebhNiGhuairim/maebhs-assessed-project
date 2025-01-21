@@ -24,6 +24,10 @@
     font-size: 25px;
     color: white;
 }
+.navbar-toggler {
+    margin-right: 20px;
+}
+
 .navbar-toggler:focus,
 .navbar-toggler:active,
 .navbar-toggler-icon:focus {
@@ -45,6 +49,9 @@
     border-color: #4F6757; /* Custom border color */
     margin-right: 20px;
     white-space: nowrap;
+    font-size: 25px;
+    padding: 0.25em 1em;
+    color: white;
 }
 
 .custom-btn:hover {
@@ -138,8 +145,38 @@
 }
 
 
+/* squiggly after why us */
+
+.custom-shape-divider-top-1737420295 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1737420295 svg {
+    position: relative;
+    display: block;
+    width: calc(112% + 1.3px);
+    height: 66px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1737420295 .shape-fill {
+    fill: #F4F0EB;
+}
+
 .invitation {
-    background-color: #E1D3CD;
+    background: url('../images/invitation.jpg') no-repeat center center/cover;
+    color: white;
+    position: relative;
+}
+
+.join-us {
+    margin-top:40px;
 }
 
 
