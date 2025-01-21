@@ -36,14 +36,13 @@
     color: white;
 }
 
-
 .logo {
     font-size: 50px;
     white-space: nowrap;
     color: white;
 }
 
-/* book a class button */
+/* standard button */
 .custom-btn {
     background-color: #9C9B8E; /* Custom background color */
     border-color: #4F6757; /* Custom border color */
@@ -82,8 +81,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow */
 }
 
-/* top swirl */
-
+/* swirl number 1 */
 .custom-shape-divider-bottom-1737311119 {
     position: absolute;
     bottom: 0;
@@ -106,11 +104,13 @@
     padding-top: 100px;
 }
 
+/* about section */
+
 .about {
     background-color: #E0CDC1;
 }
 
-
+/* why us section */
 .why-us {
     position: relative;
     background-color: #F4F0EB;
@@ -121,7 +121,7 @@
     background-color: #f3ece7;
 }
 
-/* why us swirl */
+/* swirl number 2 */
 
 .custom-shape-divider-top-1737372251 {
     position: absolute;
@@ -145,7 +145,7 @@
 }
 
 
-/* squiggly after why us */
+/* squiggle number 3 */
 
 .custom-shape-divider-top-1737420295 {
     position: absolute;
@@ -169,6 +169,8 @@
     fill: #F4F0EB;
 }
 
+/* invitation section */
+
 .invitation {
     background: url('../images/invitation.jpg') no-repeat center center/cover;
     color: white;
@@ -179,6 +181,17 @@
     margin-top:40px;
 }
 
+/* contact section */
+.contact {
+    background-color: #E0CDC1;
+}
+
+
+/* classes section */
+
+.classes {
+    margin-top: 75px;
+}
 
 /* Fonts */
 

@@ -21,4 +21,6 @@ from home import views as index_views
 urlpatterns = [
     path('', index_views.index, name='index'),
     path('admin/', admin.site.urls),
+    path('contact/', include('contact.urls')),  # Include the contact app URLs
+    path('schedule/', index_views.schedule, name='schedule'),
 ]
