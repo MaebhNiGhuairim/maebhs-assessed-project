@@ -269,6 +269,26 @@
 }
 
 
+/* booking section */
+.booking-hero {
+    position: relative;
+}
+
+.booking-hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+
 /* Fonts */
 
 .montserrat-100 {

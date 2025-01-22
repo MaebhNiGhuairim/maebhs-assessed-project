@@ -5,9 +5,18 @@
 {% block title %}Booking - The Yoga Loft{% endblock %}
 
 {% block content %}
+
+<section class="booking-hero position-relative">
+    <div class="container-fluid p-0">
+        <img src="{% static 'images/booking.jpg' %}" class="img-fluid w-100" alt="A yoga class in progress">
+        <div class="hero-text">
+            <h2 class="display-4">Booking</h2>
+        </div>
+    </div>
+</section>
+
 <section class="booking py-5">
     <div class="container">
-        <h2 class="text-center mb-4">Booking</h2>
         <div class="row justify-content-center log-in-to-book">
             {% if not user.is_authenticated %}
             <div class="col-md-4 mb-4">
@@ -15,7 +24,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Login</h5>
                         <p class="card-text">Already have an account? Log in to book a class.</p>
-                        <a href="{% url 'account_login' %}" class="btn custom-btn">Login</a>
+                        <a href="{% url 'account_login' %}?next={% url 'booking' %}" class="btn custom-btn">Login</a>
                     </div>
                 </div>
             </div>
@@ -24,7 +33,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Register</h5>
                         <p class="card-text">Don't have an account? Sign up to book a class.</p>
-                        <a href="{% url 'account_signup' %}" class="btn custom-btn">Register</a>
+                        <a href="{% url 'account_signup' %}?next={% url 'booking' %}" class="btn custom-btn">Register</a>
                     </div>
                 </div>
             </div>
