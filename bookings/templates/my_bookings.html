@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
@@ -7,7 +8,18 @@
 <section class="my-bookings py-5">
     <div class="container">
         <h2 class="text-center mb-4">My Bookings</h2>
-        <!-- Add content for displaying user bookings here -->
+        <div class="row">
+            {% for booking in bookings %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ booking.yoga_class.class_name }}</h5>
+                        <p class="card-text">Date: {{ booking.booking_date }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
 {% endblock %}
