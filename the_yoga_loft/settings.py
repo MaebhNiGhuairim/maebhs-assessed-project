@@ -53,7 +53,12 @@ INSTALLED_APPS = [
     'home',
     'bookings',
     'contact',
+    'crispy_forms',
+    'crispy_bootstrap4',
 ]
+
+# Specify the template pack to use
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
