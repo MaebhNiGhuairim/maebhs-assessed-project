@@ -1,4 +1,9 @@
-<!-- home/templates/home/base.html -->
+{% url 'home' as home_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,9 +54,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                 </li>
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="btn custom-btn" href="#">Book a class!</a>
+                    <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                        href="{% url 'account_logout' %}">Logout</a>
                 </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="btn custom-btn" href="{% url 'booking' %}">Book a class!</a>
+                </li>
+
             </ul>
         </div>
     </nav>

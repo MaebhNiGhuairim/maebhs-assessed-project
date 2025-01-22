@@ -1,0 +1,33 @@
+<!-- templates/booking.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Booking Options - The Yoga Loft{% endblock %}
+
+{% block content %}
+<section class="booking py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Booking Options</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Login</h5>
+                        <p class="card-text">Already have an account? Log in to book a class.</p>
+                        <a href="{% url 'account_login' %}" class="btn custom-btn">Login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Register</h5>
+                        <p class="card-text">Don't have an account? Sign up to book a class.</p>
+                        <a href="{% url 'account_signup' %}" class="btn custom-btn">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

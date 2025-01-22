@@ -8,3 +8,6 @@ def index(request):
 
 def schedule(request):
     return render(request, 'schedule.html')
+
+def booking(request):
+    return render(request, 'booking.html') 
