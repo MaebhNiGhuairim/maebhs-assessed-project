@@ -20,9 +20,10 @@ from home import views as index_views
 
 urlpatterns = [
     path('', index_views.index, name='index'),
-    path("accounts/", include("allauth.urls")),
+    path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
-    path('booking/', index_views.booking, name='booking'), 
-    path('contact/', include('contact.urls')),  # Include the contact app URLs
-    path('schedule/', index_views.schedule, name='schedule'),
+    path('contact/', include('contact.urls')), 
+    path('bookings/', include('bookings.urls')), 
+    path('my-account/', index_views.my_account, name='my_account'),
+    path('classes/', index_views.classes, name='classes'),
 ]

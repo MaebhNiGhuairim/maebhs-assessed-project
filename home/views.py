@@ -6,8 +6,8 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
-def schedule(request):
-    return render(request, 'schedule.html')
+def classes(request):
+    return render(request, 'classes.html')
 
-def booking(request):
-    return render(request, 'booking.html') 
+def my_account(request):
+    return render(request, 'my_account.html') 

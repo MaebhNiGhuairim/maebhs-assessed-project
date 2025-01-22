@@ -1,0 +1,33 @@
+<!-- templates/my_account.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Account - The Yoga Loft{% endblock %}
+
+{% block content %}
+<section class="my-account py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">My Account</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">My Bookings</h5>
+                        <p class="card-text">View and manage your bookings.</p>
+                        <a href="{% url 'my_bookings' %}" class="btn custom-btn w-100">My Bookings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Logout</h5>
+                        <p class="card-text">Log out of your account.</p>
+                        <a href="{% url 'account_logout' %}" class="btn custom-btn w-100">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
