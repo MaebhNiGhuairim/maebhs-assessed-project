@@ -2,13 +2,14 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Booking Options - The Yoga Loft{% endblock %}
+{% block title %}Booking - The Yoga Loft{% endblock %}
 
 {% block content %}
 <section class="booking py-5">
     <div class="container">
-        <h2 class="text-center mb-4">Booking Options</h2>
-        <div class="row justify-content-center">
+        <h2 class="text-center mb-4">Booking</h2>
+        <div class="row justify-content-center log-in-to-book">
+            {% if not user.is_authenticated %}
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <div class="card-body text-center">
@@ -27,6 +28,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </section>
