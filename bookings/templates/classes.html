@@ -15,7 +15,18 @@
                         <h5 class="card-title">{{ yoga_class.class_name }}</h5>
                         <p class="card-text">{{ yoga_class.description }}</p>
                         <p class="card-text">Duration: {{ yoga_class.duration }}</p>
-                        <a href="{% url 'book-a-class' %}" class="btn custom-btn">Book Now</a>
+                        
+                        {% if yoga_class.classschedule_set.all %}
+                        <h6>Available Schedules:</h6>
+                        <ul>
+                            {% for schedule in yoga_class.classschedule_set.all %}
+                            <li>{{ schedule.day_of_week }} at {{ schedule.start_time }}</li>
+                            {% endfor %}
+                        </ul>
+                        <a href="{% url 'book_class' %}" class="btn custom-btn">Book Now</a>
+                        {% else %}
+                        <p class="text-danger">No schedules available.</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>

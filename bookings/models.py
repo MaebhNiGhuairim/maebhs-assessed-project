@@ -24,12 +24,11 @@ class ClassSchedule(models.Model):
 
     def __str__(self):
         return f"{self.yoga_class.class_name} - {self.day_of_week} at {self.start_time}"
-
-
+    
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    yoga_class = models.ForeignKey(YogaClass, on_delete=models.CASCADE)
+    class_schedule = models.ForeignKey(ClassSchedule, on_delete=models.CASCADE, null=True, blank=True)
     booking_date = models.DateField()
 
     def __str__(self):
-        return f"{self.user.username} - {self.yoga_class.class_name} on {self.booking_date}"
+        return f"{self.user.username} - {self.class_schedule.yoga_class.class_name} on {self.booking_date} at {self.class_schedule.start_time}"
