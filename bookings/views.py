@@ -23,7 +23,7 @@ def book_class(request):
             return redirect('my_bookings')
     else:
         form = BookingForm()
-    return render(request, 'book_class.html', {'form': form})
+    return render(request, 'booking.html', {'form': form})
 
 
 @login_required
