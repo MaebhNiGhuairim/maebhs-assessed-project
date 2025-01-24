@@ -23,9 +23,33 @@
             <div class="col-md-6">
                 <form method="post">
                     {% csrf_token %}
-                    {{ form|crispy }}
+                    <div class="mb-3">
+                        <label for="yoga_class" class="form-label">Select a Class</label>
+                        <select id="yoga_class" name="yoga_class" class="form-control">
+                            <option value="">Select a class</option>
+                            {% for yoga_class in yoga_classes %}
+                            <option value="{{ yoga_class.id }}">{{ yoga_class.class_name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="class_schedule" class="form-label">Day and Time</label>
+                        <select id="class_schedule" name="class_schedule" class="form-control" disabled>
+                            <option value="">Select a day and time</option>
+                        </select>
+                    </div>
+                
+                    <div class="mb-3">
+                        <label for="booking_date" class="form-label">Select a Date</label>
+                        <select id="booking_date" name="booking_date" class="form-control" disabled>
+                            <option value="">Select a date</option>
+                        </select>
+                    </div>
+                    
                     <button type="submit" class="btn custom-btn w-100">Book Now</button>
                 </form>
+                
             </div>
         </div>
         {% endif %}
@@ -58,4 +82,7 @@
         </div>
     </div>
 </section>
+
+<script id="class_schedules_data" type="application/json">{{ class_schedules|safe }}</script>
+<script src="{% static 'js/booking.js' %}"></script>
 {% endblock %}
