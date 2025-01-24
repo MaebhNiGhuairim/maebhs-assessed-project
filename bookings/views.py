@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from datetime import date, timedelta
+from datetime import datetime, timedelta
 from .models import YogaClass, Booking, ClassSchedule
 from .forms import BookingForm
 
@@ -33,16 +33,26 @@ def my_bookings(request):
 
 @login_required
 def edit_booking(request, booking_id):
-    booking = get_object_or_404(Booking, id=booking_id)
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    
     if request.method == 'POST':
-        booking_date = request.POST.get('booking_date')
-        class_schedule_id = request.POST.get('class_schedule')
-        class_schedule = get_object_or_404(ClassSchedule, id=class_schedule_id)
-        booking.booking_date = booking_date
-        booking.class_schedule = class_schedule
-        booking.save()
-        return redirect('my_bookings')
-    return render(request, 'my_bookings.html')
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'status': 'success'})
+            return redirect('my_bookings')
+    else:
+        form = BookingForm(instance=booking)
+    
+    # Pass initial data for the form
+    yoga_classes = YogaClass.objects.all()
+    
+    return render(request, 'edit_booking_modal.html', {
+        'form': form,
+        'booking': booking,
+        'yoga_classes': yoga_classes
+    })
 
 @login_required
 def delete_booking(request, booking_id):
@@ -67,10 +77,18 @@ def get_class_schedules(request, class_id):
 
 # Returns valid booking dates
 def get_valid_dates(request):
-    if request.method == 'GET':
-        today = date.today()
-        dates = [
-            (today + timedelta(days=i)).strftime('%Y-%m-%d')
-            for i in range(28)  # Next 4 weeks
-        ]
-        return JsonResponse({'dates': dates})
+    schedule_id = request.GET.get('schedule_id')
+    if not schedule_id:
+        return JsonResponse({'dates': []})
+    
+    schedule = get_object_or_404(ClassSchedule, id=schedule_id)
+    today = datetime.today()
+    dates = []
+    
+    for i in range(0, 28):  # 4 weeks
+        date = today + timedelta(days=i)
+        if date.strftime('%A') == schedule.day_of_week:
+            dates.append(date.strftime('%d/%m/%Y'))
+    
+    return JsonResponse({'dates': dates})
+

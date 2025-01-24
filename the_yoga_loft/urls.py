@@ -22,8 +22,8 @@ urlpatterns = [
     path('', index_views.index, name='index'),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
-    path('contact/', include('contact.urls')), 
-    path('bookings/', include('bookings.urls')), 
+    path('contact/', include('contact.urls')),
+    path('bookings/', include('bookings.urls')),  # Include bookings app URLs
     path('my-account/', index_views.my_account, name='my_account'),
     path('classes/', index_views.classes, name='classes'),
 ]

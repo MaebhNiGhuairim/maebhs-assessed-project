@@ -49,6 +49,11 @@
                     
                     <button type="submit" class="btn custom-btn w-100">Book Now</button>
                 </form>
+                <div id="api-urls" 
+                data-schedules-url="{% url 'get_class_schedules' 0 %}" 
+                data-dates-url="{% url 'get_valid_dates' %}"
+                style="display: none;">
+           </div>
                 
             </div>
         </div>

@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'contact',
     'crispy_forms',
     'crispy_bootstrap4',
+    'rest_framework',
+
 ]
 
 # Specify the template pack to use
