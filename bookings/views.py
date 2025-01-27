@@ -13,16 +13,18 @@ def classes(request):
 @login_required
 def book_class(request):
     if request.method == 'POST':
-        form = BookingForm(request.POST)
+        form = BookingForm(request.POST, user=request.user)
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
             booking.save()
             return redirect('my_bookings')
     else:
-        yoga_classes = YogaClass.objects.all()
-        form = BookingForm()
-    return render(request, 'book_a_class.html', {'form': form, 'yoga_classes': yoga_classes})
+        form = BookingForm(user=request.user)
+    
+    return render(request, 'book_a_class.html', {
+        'form': form
+    })
 
 
 # Display user's bookings
@@ -67,6 +69,7 @@ def delete_booking(request, booking_id):
     return redirect('my_bookings')
 
 # Returns class schedules for a given class
+@login_required
 def get_class_schedules(request, class_id):
     if request.method == 'GET':
         schedules = ClassSchedule.objects.filter(yoga_class_id=class_id)
@@ -89,10 +92,11 @@ def get_valid_dates(request):
     today = datetime.today()
     dates = []
     
-    for i in range(0, 28):  # 4 weeks
+    # Get next 4 weeks of valid dates
+    for i in range(28):
         date = today + timedelta(days=i)
         if date.strftime('%A') == schedule.day_of_week:
-            dates.append(date.strftime('%d/%m/%Y'))
+            dates.append(date.strftime('%Y-%m-%d'))
     
     return JsonResponse({'dates': dates})
 

@@ -31,5 +31,8 @@ class Booking(models.Model):
     class_schedule = models.ForeignKey(ClassSchedule, on_delete=models.CASCADE, null=True, blank=True)
     booking_date = models.DateField()
 
+    class Meta:
+        unique_together = ['user', 'class_schedule', 'booking_date']
+
     def __str__(self):
         return f"{self.user.username} - {self.class_schedule.yoga_class.class_name} on {self.booking_date} at {self.class_schedule.start_time}"
