@@ -3,6 +3,37 @@
 ## Overview
 The Yoga Loft is a web application designed to simplify yoga class scheduling and booking for students of the studio. This Django-powered website provides an intuitive, user-friendly interface where yoga enthusiasts can easily browse class schedules, create personal accounts, and seamlessly reserve spots in their preferred yoga sessions. By offering real-time booking capabilities, detailed class descriptions, and a streamlined registration process, The Yoga Loft Booking Platform eliminates traditional scheduling barriers, making it convenient for students to explore and commit to their wellness journey, which in turn improves class numbers.
 
+## Table of Contents
+1. [Overview](#overview)
+2. [UX Design Process](#ux-design-process)  
+   - [Link to User Stories](#link-to-user-stories)  
+   - [Wireframes](#wireframes)
+3. [Accessibility](#accessibility)  
+4. [Design Rationale](#design-rationale)  
+5. [Reasoning for Final Changes](#reasoning-for-final-changes)  
+6. [Key Features](#key-features)  
+   - [Implemented](#implemented)  
+7. [Deployment](#deployment)  
+   - [Deployment Overview](#deployment-overview)  
+   - [Pre-Deployment Checklist](#pre-deployment-checklist)  
+   - [Deploying to Heroku](#deploying-to-heroku)  
+8. [Forking and Cloning the Repository](#forking-and-cloning-the-repository)  
+   - [Fork the Project](#fork-the-project)  
+   - [Clone the Project](#clone-the-project)  
+9. [Local Development Setup](#local-development-setup)  
+   - [Environment Variables](#environment-variables)  
+   - [Database and Migrations](#database-and-migrations)  
+   - [Services Used](#services-used)  
+10. [Tech Stack](#tech-stack)  
+11. [AI Implementation and Orchestration](#ai-implementation-and-orchestration)  
+    - [Use Cases and Reflections](#use-cases-and-reflections)  
+12. [Testing Summary](#testing-summary)  
+    - [Manual Testing](#manual-testing)  
+    - [Automated Testing](#automated-testing)  
+13. [Upcoming Features](#upcoming-features)  
+
+
+
 ## UX Design Process
 - **Link to User Stories in GitHub Projects:**
   - [The project's KanBan board.](https://github.com/users/MaebhNiGhuairim/projects/5)
@@ -63,7 +94,7 @@ By combining accessibility principles with thoughtful design choices, The Yoga L
 
 
 
-- **Reasoning For Any Final Changes:**
+- **Reasoning For Final Changes:**
   - I removed the Join button to allow for better symmetry in the navbar, and made the "Book a class" button bigger to be a stronger call to action.
   - I moved the about section to the homepage as I wanted the homepage to be the welcome to the studio.
   - I added a "My account" section to the navbar to indicate when a user was logged in.
