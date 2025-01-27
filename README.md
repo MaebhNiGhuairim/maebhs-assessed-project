@@ -9,13 +9,64 @@ The Yoga Loft is a web application designed to simplify yoga class scheduling an
   - I used Perplexity to brainstorm some user ideas, but I sorted through them, selected and modified the most relevant user stories for this project.
 - **Wireframes:**
   - [Attach or link to accessible wireframes used in the design process, ensuring high colour contrast and alt text for visual elements.]
-  - [Explain the rationale behind the layout and design choices, focusing on usability and accessibility for all users, including those using assistive technologies.]
-- **Design Rationale:**
-  - [Explain key design decisions, such as layout, colour scheme, typography, and how accessibility guidelines (e.g., WCAG) were integrated.]
-  - [Highlight any considerations made for users with disabilities, such as screen reader support.]
+  - Whilst my homepage wireframe looks quite similar to the end product, the about and classes section has changed. This reflects new considerations I kept in mind as the website was developing.
+  - 
+
+### Accessibility
+
+The Yoga Loft prioritizes simplicity, usability, and inclusivity to create a seamless experience for all users, including those with disabilities. Accessibility features are integrated throughout the design:  
+
+1. **Navigation and User Flow**  
+   - The site uses a clear, logical layout with intuitive navigation links (e.g., Home, Classes, Book a Class, My Bookings).  
+   - Buttons, forms, and other interactive elements are labeled meaningfully to ensure clarity and ease of use for all users, including those relying on assistive technologies.  
+
+2. **Responsiveness and Compatibility**  
+   - Fully responsive design ensures usability across all devices, from smartphones to desktops.  
+   - Semantic HTML elements (e.g., `<header>`, `<nav>`, `<main>`) enhance compatibility with screen readers and assistive technologies.  
+
+3. **WCAG Adherence**  
+   - Text and background colors are carefully chosen to meet WCAG contrast standards, ensuring readability for users with visual impairments.  
+   - Keyboard accessibility ensures that all interactive elements can be navigated without a mouse.  
+
+4. **Forms and Dynamic Features**  
+   - Clear labels, placeholders, and user-friendly error messages guide users through the booking process.  
+   - Dynamic dropdown menus update based on user input, simplifying navigation and reducing cognitive load.  
+
+By implementing these features, The Yoga Loft ensures inclusivity, making the website functional and accessible for users of all abilities.  
+
+---
+
+### Design Rationale
+
+The Yoga Loft’s design reflects a balance between aesthetics, functionality, and inclusivity. Below are the key design decisions:  
+
+1. **Layout**  
+   - A clean, minimal layout directs users to the site’s primary functions (browsing classes, booking, and viewing bookings) without unnecessary distractions.  
+
+2. **Colour Scheme**  
+   - A calming palette reflects the studio’s ethos:  
+     - **Primary Colours**: `#AD6E56` (earthy terracotta) and `#4F6757` (forest green).  
+     - **Secondary Colours**: `#9C9B8E` (grey-green) and `#E0CDC1` (soft beige).  
+     - **Background/Accent Colours**: `#F4F0EB` and `#f3ece7` (light tones) for contrast and content highlighting.  
+   - Colors maintain sufficient contrast to meet WCAG AA standards for accessibility.  
+
+3. **Typography**  
+   - The sans-serif font "Montserrat" provides a modern, clean appearance and high readability.  
+   - Font sizes are scaled for optimal legibility across all devices, with headings prominent and body text easy to read.  
+
+4. **Accessibility Considerations**  
+   - **Screen Reader Support**: Semantic HTML and ARIA roles improve accessibility for users relying on screen readers.  
+   - **Visual Impairments**: High-contrast text and scalable fonts enhance usability.  
+   - **Motor Impairments**: Large, easy-to-click buttons and intuitive navigation support users with limited dexterity.  
+
+By combining accessibility principles with thoughtful design choices, The Yoga Loft delivers a welcoming, user-friendly experience for all visitors, while reflecting the calm, serene atmosphere of a yoga studio.  
+
+
+
 - **Reasoning For Any Final Changes:**
-  - [Summarise significant changes made to the design during development and the reasons behind them.]
-  - [Reflect on how these changes enhance inclusivity and accessibility.]
+  - I removed the Join button to allow for better symmetry in the navbar, and made the "Book a class" button bigger to be a stronger call to action.
+  - I moved the about section to the homepage as I wanted the homepage to be the welcome to the studio.
+  - I added a "My account" section to the navbar to indicate when a user was logged in.
 
 ## Key Features
 ### Implemented
