@@ -235,22 +235,31 @@ Follow these steps to deploy the project:
 ## AI Implementation and Orchestration
 
 ### Use Cases and Reflections:
-(Highlight how prompts, such as reverse, question-and-answer or multi-step, were used to support learners with SEND or ALN where relevant.)
 
-  - **Code Creation:** 
-    - Reflection: Strategic use of AI allowed for rapid prototyping, with minor adjustments for alignment with project goals. 
-    - Examples: Reverse prompts for alternative code solutions and question-answer prompts for resolving specific challenges.
-  - **Debugging:** 
-    - Reflection: Key interventions included resolving logic errors and enhancing maintainability, with a focus on simplifying complex logic to make it accessible.
-  - **Performance and UX Optimization:** 
-    - Reflection: Minimal manual adjustments were needed to apply AI-driven improvements, which enhanced application speed and user experience for all users.
-  - **Automated Unit Testing:**
-    - Reflection: Adjustments were made to improve test coverage and ensure alignment with functionality. Prompts were used to generate inclusive test cases that considered edge cases for accessibility.
+- **Code Creation:**  
+  - **Reflection:** AI tools were instrumental in accelerating development by generating initial drafts for core features, such as the basic homepage and basic CSS. Minor adjustments ensured the outputs aligned with project requirements and best practices.  
+  - **Examples:** Prompts were used to create basic templates for each webpage, after which I could inspect and check the code, and make whichever changes were necessary.  
 
-- **Overall Impact:**
-  - AI tools streamlined repetitive tasks, enabling focus on high-level development.
-  - Efficiency gains included faster debugging, comprehensive testing, and improved code quality.
-  - Challenges included contextual adjustments to AI-generated outputs, which were resolved effectively, enhancing inclusivity.
+- **Debugging:**  
+  - **Reflection:** AI-assisted debugging resolved issues in form validation and database queries. By simplifying complex logic and refining error-handling mechanisms, the codebase became more maintainable and user-friendly.  
+  - **Examples:** Logical errors in the date-picker and dynamic menu updates were quickly identified and addressed using targeted prompts.  
+
+- **Performance and UX Optimisation:**  
+  - **Reflection:** AI-driven suggestions enhanced the website's responsiveness and accessibility. Minimal manual adjustments were required to implement optimisations, resulting in faster load times and a smoother user experience.  
+  - **Examples:** Adjustments were made to improve the performance of the dropdown system and ensure seamless navigation for keyboard and screen reader users.  
+
+- **Automated Unit Testing:**  
+  - **Reflection:** ###
+  - **Examples:** 
+
+- **READMe documentation:**
+   - **Reflection:** I was able to give ChatGPT my main points for each section, and it was able to write what was needed, which freed me to focus on testing. It also helped with writing everything in Markdown.
+   - **Examples** I told AI how I used it in order to create this project, and it was able to write this section for me (except this part!)
+
+### Overall Impact:
+- AI tools significantly reduced time spent on repetitive tasks, enabling more focus on refining user experience and accessibility.  
+- Efficiency gains included streamlined debugging, comprehensive test coverage, and improved code maintainability.  
+- Challenges, such as contextualising AI-generated outputs, were addressed effectively, resulting in a polished, inclusive application that meets the needs of diverse users.  
 
 ## Testing Summary
 - **Manual Testing:**
