@@ -67,3 +67,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const classeshero = document.querySelector('.classes-hero');
+    console.log(classeshero)
+    if (classeshero) {
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const paragraph = this.querySelector('.card-paragraph');
+                if (paragraph.style.display === 'block') {
+                    paragraph.style.display = 'none';
+                } else {
+                    paragraph.style.display = 'block';
+                }
+            });
+        });
+    }
+});

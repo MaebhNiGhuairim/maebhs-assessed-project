@@ -1,5 +1,6 @@
 .body {
     font-family: "Montserrat", sans-serif;
+    /* background-color: #f9f9f9; */
 }
 
 
@@ -194,15 +195,32 @@
 /* classes section */
 
 .classes {
-    margin-top: 75px;
+    background-color: #E0CDC1;
 }
 
+.class-info{
+    padding: 15px;
+}
+
+.classes-hero {
+    background: url('../images/classes.jpg') no-repeat center center/cover;
+    height: 600px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    position: relative;
+    margin-top: 50px;
+    padding-top: 0% !important;
+}
 
 .classes-section {
     /* margin-top: 50px; */
     /* margin-bottom: 100px; */
-    padding: 30px 0;
-    background-color: #f9f9f9;
+    padding: 20px 0;
+    background-color: #E0CDC1;
 }
 
 .classes-section h2 {
