@@ -18,23 +18,137 @@ The Yoga Loft is a web application designed to simplify yoga class scheduling an
   - [Reflect on how these changes enhance inclusivity and accessibility.]
 
 ## Key Features
-- **Feature 1:** [Briefly describe the implemented feature.]
-- **Feature 2:** [Briefly describe the implemented feature.]
+### Implemented
+- 🧘 Dynamic class scheduling with 4-week rolling dates
+- 📅 Intelligent date picker (auto-excludes past dates)
+- 🔐 Django-Allauth authentication with email verification
+- ♿ Accessible modal system for booking management
+- 📱 Mobile-optimized responsive layout
 - **Inclusivity Notes:** 
   - [Mention how the features address the needs of diverse users, including those with SEND.]
 
-## Deployment
-- **Platform:** [Platform used, e.g., Heroku, AWS, etc.]
-- **High-Level Deployment Steps:** 
-  1. [Step 1]
-  2. [Step 2]
-  3. [Step 3]
-- **Verification and Validation:**
-  - Steps taken to verify the deployed version matches the development version in functionality.
-  - [Include any additional checks to ensure accessibility of the deployed application.]
-- **Security Measures:**
-  - Use of environment variables for sensitive data.
-  - Ensured DEBUG mode is disabled in production.
+# Deployment  
+
+## Deployment Overview  
+The application was developed using **Visual Studio Code** as the integrated development environment (IDE). **GitHub** served as the version control system, and the project was deployed to **Heroku** via the connected repository.  
+
+---
+
+## Pre-Deployment Checklist  
+Ensure the following are configured before deployment:  
+
+1. **Requirements File**  
+   - Keep `requirements.txt` updated with all dependencies using:  
+     ```bash  
+     pip3 freeze --local > requirements.txt  
+     ```  
+
+2. **Procfile**  
+   - Include a Procfile to configure Heroku to use Gunicorn:  
+     ```bash  
+     web: gunicorn [your_project_name].wsgi  
+     ```  
+
+3. **Allowed Hosts**  
+   - Update `ALLOWED_HOSTS` in `settings.py`:  
+     ```python  
+     ALLOWED_HOSTS = ['herokuapp.com', 'localhost']  
+     ```  
+
+4. **Environment Variables**  
+   - Store sensitive data (e.g., `DATABASE_URL`, `CLOUDINARY_URL`, `SECRET_KEY`) in `.env` and add it to `.gitignore`.  
+   - Add these variables to Heroku’s **Config Vars** in the app settings.  
+
+---
+
+## Deploying to Heroku  
+Follow these steps to deploy the project:  
+
+1. **Create a Heroku App**  
+   - Log in to Heroku and click **Create New App**.  
+   - Choose a unique name and select your region.  
+
+2. **Connect to GitHub**  
+   - In the **Deploy** tab, link your GitHub repository.  
+
+3. **Set Config Vars**  
+   - Add environment variables in Heroku’s **Config Vars**:  
+     ```plaintext  
+     CLOUDINARY_URL: your_cloudinary_api_key  
+     DATABASE_URL: your_postgres_url  
+     SECRET_KEY: your_secret_key  
+     DISABLE_COLLECTSTATIC: 1  # Remove after final deployment  
+     ```  
+
+4. **Deploy the Branch**  
+   - Select the main branch and click **Deploy Branch**.  
+   - After deployment, click **View** to access the live site.  
+
+**Live Link**: [Zen Yoga Studio](https://your-yoga-app.herokuapp.com/) 
+*###* 
+
+---
+
+## Forking and Cloning the Repository  
+
+### Fork the Project  
+1. Navigate to the GitHub repository.  
+2. Click **Fork** (top-right) to create a copy in your GitHub account.  
+
+### Clone the Project  
+1. On the repository page, click **Code** and copy the HTTPS/SSH URL.  
+2. In your terminal, run:  
+   ```bash  
+   git clone https://github.com/your-username/yoga-studio.git
+   ```
+3. Install dependencies:
+   pip3 install -r requirements.txt
+
+
+## Local Development Setup
+### Environment Variables
+1. Create an env.py file in the root directory:
+   ```
+    import os  
+    os.environ["DATABASE_URL"] = "your_postgres_url"  
+    os.environ["CLOUDINARY_URL"] = "your_cloudinary_api_key"  
+    os.environ["SECRET_KEY"] = "your_secret_key"  
+    os.environ["DEBUG"] = "True"  # For local development only
+   ```
+
+3. Add env.py to .gitignore.
+   
+### Database and Migrations
+1. Apply migrations
+    ```
+    python3 manage.py migrate
+    ```
+2. Create a superuser:
+   ```
+   python3 manage.py createsuperuser
+   ```
+### Services Used
+1. PostgreSQL Database
+2. Cloudinary
+
+### Key Notes
+1. Debug Mode - this should always be disabled in production:
+   ```bash  
+   DEBUG = False
+   ```
+3. Static Files:
+   
+   Remove DISABLE_COLLECTSTATIC from Heroku Config Vars after final deployment
+5. Use gitignore to protect sensitive data like the secret key.
+   
+   For more details, refer to the [Django Deployment Checklist](https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/).
+
+
+
+## Tech Stack
+**Frontend:** HTML5, CSS3, JavaScript  
+**Backend:** Django 4.2, PostgreSQL  
+**Tools:** Crispy Forms, Django REST Framework, WhiteNoise 
 
 ## AI Implementation and Orchestration
 
@@ -66,6 +180,7 @@ The Yoga Loft is a web application designed to simplify yoga class scheduling an
   - Features Covered: [Briefly list features covered by automated tests.]
   - Adjustments Made: [Describe any manual corrections to AI-generated test cases, particularly for accessibility.]
 
-## Future Enhancements
-- [List potential improvements or additional features for future development.]
-- Consider enhancements to improve accessibility further, such as voice input capabilities or additional language support.
+### Upcoming
+- Class waitlist system
+- Instructor dashboard
+- Integrated payment processing
