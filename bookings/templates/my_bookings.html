@@ -7,6 +7,15 @@
 <section class="my-bookings py-5">
     <div class="container">
     <h2 class="text-center mb-4">My Bookings</h2>
+    {% if messages %}
+            <div class="messages mb-4">
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
     <div class="row">
         {% for booking in bookings %}
         <div class="col-md-4 mb-4">
