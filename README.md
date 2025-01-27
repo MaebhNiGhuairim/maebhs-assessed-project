@@ -53,7 +53,8 @@ The Yoga Loft prioritizes simplicity, usability, and inclusivity to create a sea
 
 2. **Responsiveness and Compatibility**  
    - Fully responsive design ensures usability across all devices, from smartphones to desktops.  
-   - Semantic HTML elements (e.g., `<header>`, `<nav>`, `<main>`) enhance compatibility with screen readers and assistive technologies.  
+   - Semantic HTML elements (e.g., `<header>`, `<nav>`, `<main>`) enhance compatibility with screen readers and assistive technologies.
+   - Hover effects are click effects on mobile
 
 3. **WCAG Adherence**  
    - Text and background colors are carefully chosen to meet WCAG contrast standards, ensuring readability for users with visual impairments.  
