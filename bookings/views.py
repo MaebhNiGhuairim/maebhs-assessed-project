@@ -36,22 +36,26 @@ def edit_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id, user=request.user)
     
     if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
-        if form.is_valid():
-            form.save()
-            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                return JsonResponse({'status': 'success'})
-            return redirect('my_bookings')
-    else:
-        form = BookingForm(instance=booking)
+        # Simple date update only
+        new_date = request.POST.get('booking_date')
+        booking.booking_date = new_date
+        booking.save()
+        return redirect('my_bookings')
     
-    # Pass initial data for the form
-    yoga_classes = YogaClass.objects.all()
+    # Get valid dates for this booking's existing class schedule
+    schedule = booking.class_schedule
+    today = datetime.today()
+    valid_dates = []
     
-    return render(request, 'edit_booking_modal.html', {
-        'form': form,
+    # Generate next 4 valid dates based on the schedule's day
+    for i in range(0, 28):
+        date = today + timedelta(days=i)
+        if date.strftime('%A') == schedule.day_of_week:
+            valid_dates.append(date)
+    
+    return render(request, 'edit_booking.html', {
         'booking': booking,
-        'yoga_classes': yoga_classes
+        'valid_dates': valid_dates,
     })
 
 @login_required

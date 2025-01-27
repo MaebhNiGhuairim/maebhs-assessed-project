@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
+
+        
+
         scheduleDropdown.addEventListener('change', function () {
             const scheduleId = this.value;
             if (scheduleId) {
@@ -65,8 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 dateDropdown.disabled = true;
             }
         });
+
     }
 });
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const classeshero = document.querySelector('.classes-hero');
@@ -86,3 +93,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
