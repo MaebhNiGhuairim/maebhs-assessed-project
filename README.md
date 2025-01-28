@@ -166,7 +166,7 @@ Users have the ability to modify or cancel their bookings directly from their pr
 ### Shape dividers
 I used shape dividers to improve the flow of the website. I would've used it more across the site if I had more time.
 
-### Databases
+### Database
 I used the Code Institute's database for this project. I had 2 sets of models. One for the contact form. The other dealt with the bookings. You can see the relationship below. I was able to add classes and schedule in the django admin panel.
 ![Model Relationships](/assets/model_rel.png)
 
