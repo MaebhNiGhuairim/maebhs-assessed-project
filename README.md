@@ -98,6 +98,28 @@ The Yoga Loft’s design reflects a balance between aesthetics, functionality, a
    - **Visual Impairments**: High-contrast text and scalable fonts enhance usability.  
    - **Motor Impairments**: Large, easy-to-click buttons and intuitive navigation support users with limited dexterity.  
 
+5. **Responsiveness**
+   - **Works well across all screen types**: I used bootstrap mainly to create a responsive site. I used Google Inspect to view my site across a multitude of devices. I was able to ensure it scaled well.
+  
+   - **Homepage**
+     ![Homepage Image 2](/assets/homepage_desktop.png)
+     ![Homepage Image 2](/assets/homepage_mobile.png)![Homepage Image 2](/assets/homepage_tablet.png)
+
+
+
+
+
+
+   - **Classes**
+     ![Homepage Image 2](/assets/classes_desktop.png)
+     ![Homepage Image 2](/assets/classes_mobile.png)![Homepage Image 2](/assets/classes_tablet.png)
+
+     
+
+   - My navbar actually has 2 separate logos, each one appearance depending on the size of the screen. This ensures the logo is centered no matter the size of the screen
+
+
+
 By combining accessibility principles with thoughtful design choices, The Yoga Loft delivers a welcoming, user-friendly experience for all visitors, while reflecting the calm, serene atmosphere of a yoga studio.  
 
 
@@ -363,6 +385,7 @@ As part of ensuring the quality, accessibility, and performance of this project,
 - **AI Assistance**: Tools like CodePilot and ChatGPT were used to help generate templates, styling, and assist with testing.
 - **Stock Images**: Images used in the project were sourced from [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/).
 - **Django**: Django was used as the web framework for building the project.
+- **Bootstrap** Bootstrap was used for cards, forms, navbars and responsibility, amongst other features
 
 ---
 
