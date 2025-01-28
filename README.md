@@ -39,7 +39,8 @@ The Yoga Loft is a web application designed to simplify yoga class scheduling an
   - [The project's KanBan board.](https://github.com/users/MaebhNiGhuairim/projects/5)
   - I used Perplexity to brainstorm some user ideas, but I sorted through them, selected and modified the most relevant user stories for this project.
 - **Wireframes:**
-   ![Homepage wirefram](/assets/home_wireframe.png)
+   ![Homepage wireframe](/assets/home_wireframe.png)
+   ![About wireframe](/assets/about_wireframe.png)
 
   - Whilst my homepage wireframe looks quite similar to the end product, the about and classes section has changed. This reflects new considerations I kept in mind as the website was developing.
   - 
@@ -268,6 +269,12 @@ Follow these steps to deploy the project:
   - **Devices and Browsers Tested:** [List devices and browsers, ensuring testing was conducted with assistive technologies such as screen readers or keyboard-only navigation.]
   - **Features Tested:** [Summarise features tested manually, e.g., CRUD operations, navigation.]
   - **Results:** [Summarise testing results, e.g., "All critical features worked as expected, including accessibility checks."]
+ 
+   ![Contact Tests](/assets/tests_contact.png)
+  ![ Home Tests](/assets/tests_home.png)
+  ![ Booking Tests](/assets/tests_bookings.png)
+  ![ General Tests](/assets/tests_general.png)
+  
 - **Automated Testing:**
   - Tools Used: [Mention any testing frameworks or tools, e.g., Django TestCase.]
   - Features Covered: [Briefly list features covered by automated tests.]
