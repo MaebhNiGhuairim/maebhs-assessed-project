@@ -46,6 +46,27 @@ class ContactViewTests(TestCase):
         # Check if the form submission was successful
         self.assertEqual(response.status_code, 302)  # 302 is redirect status code
 
+    def test_invalid_email_format(self):
+        """Test that invalid email addresses are rejected"""
+        form_data = {
+            'name': 'Test User',
+            'email': 'invalid-email',  # Invalid email format
+            'message': 'Test message'
+        }
+        response = self.client.post(reverse('contact'), form_data)
+        self.assertFormError(response, 'form', 'email', 'Enter a valid email address.')
+
+    def test_required_fields(self):
+        """Test that all required fields must be filled"""
+        form_data = {
+            'name': '',  # Empty required field
+            'email': 'test@example.com',
+            'message': ''  # Empty required field
+        }
+        response = self.client.post(reverse('contact'), form_data)
+        self.assertFormError(response, 'form', 'name', 'This field is required.')
+        self.assertFormError(response, 'form', 'message', 'This field is required.')
+
 class ContactTemplateTests(TestCase):
     """Test cases for the contact template"""
     
