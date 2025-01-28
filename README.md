@@ -40,13 +40,14 @@ The Yoga Loft is a web application designed to simplify yoga class scheduling an
 - **Link to User Stories in GitHub Projects:**
   - [The project's KanBan board.](https://github.com/users/MaebhNiGhuairim/projects/5)
   - I used Perplexity to brainstorm some user ideas, but I sorted through them, selected and modified the most relevant user stories for this project.
+  - As is visible in my KanBan, some "nice to haves" were not accomplished. They would be the focus in the next iteration.
+  - Whilst I did not have an integrated Class Schedule which showed classes and their descriptions, I got around this by providing a page which explains the classes offered, and shows the schedule. So it may not fulfil the acceptance criteria, but the functionality is still present in the project. I have left the "Class Descriptions" in progress - it can be improved next iteration.
 - **Wireframes:**
 
    ![Homepage wireframe](/assets/home_wireframe.png)
    ![About wireframe](/assets/about_wireframe.png)
 
   - Whilst my homepage wireframe looks quite similar to the end product, the about and classes section has changed. This reflects new considerations I kept in mind as the website was developing.
-  - 
 
 ### Accessibility
 
