@@ -416,6 +416,12 @@ As part of ensuring the quality, accessibility, and performance of this project,
 - ![Lighthouse Desktop Results](/assets/desktop_lighthouse.png)
 - ![Lighthouse Mobile Results](/assets/mobile_lighthouse.png)
 
+### 6. Python Validation
+ - **Tool:** [CI Python Linter](https://pep8ci.herokuapp.com/)
+ - I checked the setting.py, and the models and urls across my project. This helped me formulate them according to Python best practices.
+ - ![Bookings/Urls/py passed](/assets/bookings_urls_python_validator.png)
+ - ![Settings passed](/assets/settings_python_validator.png)
+
 ### Future Features
 - Class waitlist system
 - Instructor dashboard
