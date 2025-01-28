@@ -39,6 +39,7 @@ The Yoga Loft is a web application designed to simplify yoga class scheduling an
   - [The project's KanBan board.](https://github.com/users/MaebhNiGhuairim/projects/5)
   - I used Perplexity to brainstorm some user ideas, but I sorted through them, selected and modified the most relevant user stories for this project.
 - **Wireframes:**
+
    ![Homepage wireframe](/assets/home_wireframe.png)
    ![About wireframe](/assets/about_wireframe.png)
 
