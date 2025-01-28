@@ -86,7 +86,8 @@ The Yoga Loft’s design reflects a balance between aesthetics, functionality, a
      - **Primary Colours**: `#AD6E56` (earthy terracotta) and `#4F6757` (forest green).  
      - **Secondary Colours**: `#9C9B8E` (grey-green) and `#E0CDC1` (soft beige).  
      - **Background/Accent Colours**: `#F4F0EB` and `#f3ece7` (light tones) for contrast and content highlighting.  
-   - Colors maintain sufficient contrast to meet WCAG AA standards for accessibility.  
+   - Colors maintain sufficient contrast to meet WCAG AA standards for accessibility.
+   - ![colour palette](/assets/yoga_studio_palette.png)
 
 3. **Typography**  
    - The sans-serif font "Montserrat" provides a modern, clean appearance and high readability.  
