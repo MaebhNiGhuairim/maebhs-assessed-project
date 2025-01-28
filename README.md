@@ -255,33 +255,61 @@ Follow these steps to deploy the project:
   - **Examples:** Adjustments were made to improve the performance of the dropdown system and ensure seamless navigation for keyboard and screen reader users.  
 
 - **Automated Unit Testing:**  
-  - **Reflection:** ###
+  - **Reflection:** 
+    Implementing automated unit testing using AI tools has significantly improved the efficiency and coverage of our testing process. The AI-generated test cases have helped identify edge cases and potential issues that might have been overlooked during manual testing. However, it was necessary to manually review and adjust some of the AI-generated tests to ensure they accurately reflected the application's functionality and requirements. Overall, the integration of AI in our testing workflow has enhanced the robustness and reliability of our application.
+
   - **Examples:** 
+    Here are some examples of AI-generated unit tests that were implemented and adjusted for our application:
+
+    - **Bookings App:**
+      - Tests for creating, updating, and deleting bookings.
+      - Tests to ensure that duplicate bookings are not allowed.
+
+    - **Contact App:**
+      - Tests for submitting the contact form.
+      - Tests to ensure that all required fields are validated.
 
 - **READMe documentation:**
    - **Reflection:** I was able to give ChatGPT my main points for each section, and it was able to write what was needed, which freed me to focus on testing. It also helped with writing everything in Markdown.
    - **Examples** I told AI how I used it in order to create this project, and it was able to write this section for me (except this part!)
 
 ### Overall Impact:
-- AI tools significantly reduced time spent on repetitive tasks, enabling more focus on refining user experience and accessibility.  
-- Efficiency gains included streamlined debugging, comprehensive test coverage, and improved code maintainability.  
-- Challenges, such as contextualising AI-generated outputs, were addressed effectively, resulting in a polished, inclusive application that meets the needs of diverse users.  
+- AI tools significantly reduced time spent on repetitive tasks, enabling more focus on refining user experience and accessibility.
+- Efficiency gains included streamlined debugging, comprehensive test coverage, and improved code maintainability.
 
 ## Testing Summary
+
 - **Manual Testing:**
-  - **Devices and Browsers Tested:** [List devices and browsers, ensuring testing was conducted with assistive technologies such as screen readers or keyboard-only navigation.]
-  - **Features Tested:** [Summarise features tested manually, e.g., CRUD operations, navigation.]
-  - **Results:** [Summarise testing results, e.g., "All critical features worked as expected, including accessibility checks."]
- 
-   ![Contact Tests](/assets/tests_contact.png)
-  ![ Home Tests](/assets/tests_home.png)
-  ![ Booking Tests](/assets/tests_bookings.png)
-  ![ General Tests](/assets/tests_general.png)
+  - **Devices and Browsers Tested:** 
+    - Devices: Desktop (Windows, macOS), Mobile (iOS, Android)
+    - Browsers: Chrome, Firefox, Safari, Edge
+  - **Features Tested:** 
+    - CRUD operations for bookings
+    - Navigation across different pages
+    - Form submissions and validations
+    - Accessibility checks (ARIA roles, keyboard navigation, screen reader compatibility)
+  - **Results:**
+      - *Duplicate Bookings*
+      - This was a major bug in my code for a very long time. I couldn't quite get the logic to work. Once I had the Make A Booking working, it would stop the Edit a Booking functionality, and vice versa. I used AI to debug my logic and in doing so, I was able to stop duplicate bookings. I then used unit testing to ensure dupkicate bookings could not occur. 
+    - All critical features now work as expected, including accessibility checks.
+    - No major issues found during manual testing.
+    ![Contact Tests](/assets/tests_contact.png)
+    ![Home Tests](/assets/tests_home.png)
+    ![Booking Tests](/assets/tests_bookings.png)
+    ![General Tests](/assets/tests_general.png)
   
 - **Automated Testing:**
-  - Tools Used: [Mention any testing frameworks or tools, e.g., Django TestCase.]
-  - Features Covered: [Briefly list features covered by automated tests.]
-  - Adjustments Made: [Describe any manual corrections to AI-generated test cases, particularly for accessibility.]
+  - **Tools Used:** 
+    - Django TestCase
+  - **Features Covered:** 
+    - Model validations
+    - View responses and redirects
+    - Form submissions and error handling
+    - URL routing and access control
+  - **Adjustments Made:** 
+    - Manual corrections to AI-generated test cases to ensure proper coverage and accuracy, particularly for accessibility.
+
+All tests passed successfully, ensuring the robustness and reliability of the application.
  
 ## Validation
 
@@ -316,8 +344,8 @@ As part of ensuring the quality, accessibility, and performance of this project,
 - The project underwent a Lighthouse audit for performance, accessibility, and best practices.
 - **Result**:
   - **Desktop**: Achieved excellent results across all metrics. My accessibiility could've been improved with changing the colour of the book a class button.
-  - **Mobile**: Scored **88** for performance due to image formatting issues.
-  - If I had more time, I would reformat the images to optimize performance further.
+  - **Mobile**: Scored **89** for performance due to image formatting issues.
+  - If I had more time, I would reformat the images, and delete unusued css to optimize performance further.
 - ![Lighthouse Desktop Results](/assets/desktop_lighthouse.png)
 - ![Lighthouse Mobile Results](/assets/mobile_lighthouse.png)
 
