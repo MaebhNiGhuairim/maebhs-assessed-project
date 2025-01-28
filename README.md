@@ -303,6 +303,7 @@ Follow these steps to deploy the project:
 - Font Awesome for icons across the site
 - GitHub - Version control and repo storage
 - Google Fonts
+- Eraser.io - visualising the models
 
 
 
