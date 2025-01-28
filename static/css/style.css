@@ -269,7 +269,6 @@ body {
 .classes-section .card-caption {
     color: white;
     font-size: 1.5rem;
-    text-align: bottom;
     padding: 10px;
 }
 
@@ -502,28 +501,6 @@ body {
 }
 
 
-/* Fonts */
-
-.montserrat-100 {
-  font-family: "Montserrat", serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.montserrat-400 {
-    font-family: "Montserrat", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-.montserrat-200 {
-    font-family: "Montserrat", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
 
 .footer-item {
     padding: 20px 0;
