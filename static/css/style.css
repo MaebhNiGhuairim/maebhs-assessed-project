@@ -536,5 +536,27 @@ body {
     min-height: calc(100vh - var(--navbar-height));
 }
 
+.btn-edit {
+    border-color: #7c9082;
+    color: #7c9082;
+}
+
+.btn-edit:hover {
+    background-color: #7c9082;
+    color: white;
+    border-color: #7c9082;
+}
+
+.btn-delete {
+    border-color: #c17c74;
+    color: #c17c74;
+}
+
+.btn-delete:hover {
+    background-color: #c17c74;
+    color: white;
+    border-color: #c17c74;
+}
+
 
 
