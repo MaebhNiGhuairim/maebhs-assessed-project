@@ -88,17 +88,21 @@ The Yoga Loft’s design reflects a balance between aesthetics, functionality, a
      - **Background/Accent Colours**: `#F4F0EB` and `#f3ece7` (light tones) for contrast and content highlighting.  
    - Colors maintain sufficient contrast to meet WCAG AA standards for accessibility.
    - ![colour palette](/assets/yoga_studio_palette.png)
+     
+3. **Imagery**
+   - I chose light and airy images to invoke the calm experience of being in the studio.
+   - I had to darken the hero images and card images in some instances to allow text to be read over the images.
 
-3. **Typography**  
+5. **Typography**  
    - The sans-serif font "Montserrat" provides a modern, clean appearance and high readability.  
    - Font sizes are scaled for optimal legibility across all devices, with headings prominent and body text easy to read.  
 
-4. **Accessibility Considerations**  
+6. **Accessibility Considerations**  
    - **Screen Reader Support**: Semantic HTML and ARIA roles improve accessibility for users relying on screen readers.  
    - **Visual Impairments**: High-contrast text and scalable fonts enhance usability.  
    - **Motor Impairments**: Large, easy-to-click buttons and intuitive navigation support users with limited dexterity.  
 
-5. **Responsiveness**
+7. **Responsiveness**
    - **Works well across all screen types**: I used bootstrap mainly to create a responsive site. I used Google Inspect to view my site across a multitude of devices. I was able to ensure it scaled well.
   
    - **Homepage**
@@ -130,14 +134,36 @@ By combining accessibility principles with thoughtful design choices, The Yoga L
   - I added a "My account" section to the navbar to indicate when a user was logged in.
 
 ## Key Features
-### Implemented
-- 🧘 Dynamic class scheduling with 4-week rolling dates
-- 📅 Intelligent date picker (auto-excludes past dates)
-- 🔐 Django-Allauth authentication with email verification
-- ♿ Accessible modal system for booking management
-- 📱 Mobile-optimized responsive layout
-- **Inclusivity Notes:** 
-  - [Mention how the features address the needs of diverse users, including those with SEND.]
+
+### Navbar
+The navigation bar provides easy access to the Classes page, the About section, the Contact form, My Account section and the Book a Class button. This ensures smooth user navigation throughout the application. The logo is central to the navbar, and is visible above the dropdown menu when screens are smaller. A user knows they are logged in when they can see My Account in the navbar.
+
+### Classes Page
+The Classes page is designed the welcome the user to be curious about the classes provided. It has four cards, with the names of each class over an image from the class. When you hover over the image (or click on mobile), the description of the class is revealed. Below that is the class schedule. 
+
+### About Section
+The About section provides information about the yoga studio, including its mission and reasons why a user should join. it reiterates the call to action at the bottom - book now!
+
+### Contact Form
+The Contact form allows users to get in touch with the yoga studio by submitting inquiries, feedback, or requests through a simple form interface. It provides a success message when a messsage is sent. That message is held in the messages model, and is accessable to the admin in the django admin page. 
+
+### Book a Class
+This is the main call to action on the website. If you are not logged in, the button prompts you to sign in, before being redirected to the book a class page. There you can first select the class, then the day/time and then the date. The valid dates are prepopulated so users don't accidentally book an invalid date. If you try to book a class you have already book, you will get an error message. When you successfully book a class, you are redirected to "My bookings" and you see a success message.
+
+### Sign Up/Sign In/Logout - All Created with AllAuth
+User authentication is handled by Django AllAuth, allowing users to sign up, log in, and log out securely. This feature ensures that users can manage their accounts with ease. It was minimally styled by me
+
+### View My Account
+This page allows users to log out or view their bookings.
+
+### View My Bookings
+Users can view their current and past bookings in their profile, helping them keep track of upcoming sessions.
+
+### Edit & Delete Bookings
+Users have the ability to modify or cancel their bookings directly from their profile, providing flexibility in managing their class schedule. They are warned before deleting bookings. When they edit bookings, the date of their current booking is not available to them in the drop down. If they try to book a class they have already booked, they get a message saying they've already booked a class on that day. This prevents duplicate bookings.
+
+
+
 
 # Deployment  
 
