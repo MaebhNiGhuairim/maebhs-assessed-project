@@ -1,6 +1,7 @@
 #models.py
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
 
 class YogaClass(models.Model):
     class_name = models.CharField(max_length=100)
@@ -28,11 +29,24 @@ class ClassSchedule(models.Model):
     
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    class_schedule = models.ForeignKey(ClassSchedule, on_delete=models.CASCADE, null=True, blank=True)
+    class_schedule = models.ForeignKey(
+        ClassSchedule, 
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+    )
     booking_date = models.DateField()
 
     class Meta:
         unique_together = ['user', 'class_schedule', 'booking_date']
+
+    def clean(self):
+        if not self.class_schedule:
+            raise ValidationError('Class schedule is required')
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.user.username} - {self.class_schedule.yoga_class.class_name} on {self.booking_date} at {self.class_schedule.start_time}"

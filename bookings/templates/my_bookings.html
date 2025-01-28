@@ -10,12 +10,14 @@
     {% if messages %}
             <div class="messages mb-4">
                 {% for message in messages %}
-                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
-                    {{ message }}
-                </div>
+                    {% if 'booking' in message|lower %}
+                    <div class="alert alert-success" role="alert" aria-atomic="true">
+                        {{ message }}
+                    </div>
+                    {% endif %}
                 {% endfor %}
             </div>
-            {% endif %}
+    {% endif %}
     <div class="row">
         {% for booking in bookings %}
         <div class="col-md-4 mb-4">
@@ -24,14 +26,16 @@
                     <h5 class="card-title">{{ booking.class_schedule.yoga_class.class_name }}</h5>
                     <p class="card-text">{{ booking.class_schedule.day_of_week }} at {{ booking.class_schedule.start_time }}</p>
                     <p class="card-text">Date: {{ booking.booking_date }}</p>
-                    <a href="{% url 'edit_booking' booking.id %}" class="btn btn-sm btn-warning">Edit</a>
-                    <button 
+                    <div class="d-flex gap-2 mt-3">
+                        <a href="{% url 'edit_booking' booking.id %}" class="btn btn-outline-secondary btn-edit">Edit</a>
+                        <button 
                             type="button" 
-                            class="btn btn-danger" 
+                            class="btn btn-outline-secondary btn-delete" 
                             data-bs-toggle="modal" 
                             data-bs-target="#deleteModal{{ booking.id }}">
                             Delete
                         </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -50,7 +54,7 @@
                         <form action="{% url 'delete_booking' booking.id %}" method="POST">
                             {% csrf_token %}
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-outline-secondary btn-delete">Delete</button>
                         </form>
                     </div>
                 </div>
