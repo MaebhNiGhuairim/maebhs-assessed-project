@@ -355,3 +355,19 @@ As part of ensuring the quality, accessibility, and performance of this project,
 - Class waitlist system
 - Instructor dashboard
 - Integrated payment processing
+
+
+## Credits
+
+- **Code Institute Learning Materials**: The learning materials from Code Institute provided the foundational knowledge for this project.
+- **AI Assistance**: Tools like CodePilot and ChatGPT were used to help generate templates, styling, and assist with testing.
+- **Stock Images**: Images used in the project were sourced from [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/).
+- **Django**: Django was used as the web framework for building the project.
+
+---
+
+## Thanks
+
+- **The Code Institute Team**: A huge thank you to Dillon, Mark, John, Roo, and the entire team at Code Institute for their guidance and support throughout the development of this project.
+- **Personal Support**: Thanks to Amanda, Ger, Joanna, and Maja for their massive support, and to the entire Code Institute cohort for fostering a collaborative learning environment.
+
