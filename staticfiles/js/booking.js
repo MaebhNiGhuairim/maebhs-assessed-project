@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener('DOMContentLoaded', function() {
     const classeshero = document.querySelector('.classes-hero');
-    console.log(classeshero)
     if (classeshero) {
         const cards = document.querySelectorAll('.card');
 

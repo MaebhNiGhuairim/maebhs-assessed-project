@@ -8,7 +8,6 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Montserrat", sans-serif;
-    /* background-color: #f9f9f9; */
 }
 
 /* Navbar */
@@ -83,7 +82,6 @@ body {
     text-align: center;
     color: black;
     position: relative;
-    /* margin-top: 50px; */
 }
 
 .display-4 {
@@ -211,7 +209,7 @@ body {
 
 .classes-hero {
     background: url('../images/classes.jpg') no-repeat center center/cover;
-    height: 600px;
+    height: 800px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -219,13 +217,11 @@ body {
     text-align: center;
     color: black;
     position: relative;
-    /* margin-top: 50px; */
     padding-top: 0% !important;
 }
 
 .classes-section {
-    /* margin-top: 50px; */
-    /* margin-bottom: 100px; */
+
     padding: 20px 0;
     background-color: #E0CDC1;
 }
@@ -384,6 +380,11 @@ body {
 
 .auth-box .form-group {
     text-align: left;
+    margin-bottom: 1.5rem;
+}
+/* contact form styling*/
+.contact textarea {
+    margin-bottom: 1.5rem;
 }
 
 .auth-box .btn {
@@ -409,10 +410,7 @@ body {
     font-weight: 600;
 }
 
-/* Form Styling */
-.auth-box .form-group {
-    margin-bottom: 1.5rem;
-}
+
 
 .auth-box .form-control:focus {
     border-color: #007bff;
@@ -556,6 +554,388 @@ body {
     background-color: #c17c74;
     color: white;
     border-color: #c17c74;
+}
+
+/* Booking Intro Section */
+.booking-intro {
+    background-color: #f8f9fa;
+}
+
+.booking-intro .lead {
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.booking-intro h2 {
+    color: #333;
+    font-weight: 300;
+}
+
+.booking-intro .highlight {
+    text-align: center;
+    padding: 1rem;
+}
+
+.booking-intro .highlight i {
+    font-size: 1.5rem;
+    color: #9c7b63;  /* This should match your theme color */
+    display: block;
+}
+
+.booking-intro .highlight p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+/* My Account Page Styling */
+.my-account .account-title {
+    color: #333;
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+
+.my-account .lead {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.account-card {
+    background: #F4F0EB;
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 350px;
+}
+
+.account-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.account-card .card-content {
+    margin-bottom: 1rem;
+}
+
+.account-card .card-footer {
+    margin-top: auto;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: #9c7b63;
+    margin-bottom: 1rem;
+}
+
+.account-card .card-title {
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.account-card .card-text {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Contact Page Styling */
+.contact-intro {
+    background-color: #f8f9fa;
+}
+
+.contact-intro h2 {
+    color: #333;
+    font-weight: 300;
+    font-size: 2.5rem;
+}
+
+.contact-intro .lead {
+    color: #666;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.contact-highlights .highlight {
+    text-align: center;
+    padding: 1rem;
+}
+
+.contact-highlights .highlight i {
+    font-size: 1.5rem;
+    color: #9c7b63;
+    display: block;
+}
+
+.contact-highlights .highlight p {
+    margin-bottom: 0;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.contact-form {
+    background-color: #fff;
+}
+
+.form-wrapper {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-wrapper label {
+    color: #333;
+    font-weight: 500;
+}
+
+.form-wrapper .form-control {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.form-wrapper .form-control:focus {
+    border-color: #9c7b63;
+    box-shadow: 0 0 0 0.2rem rgba(156, 123, 99, 0.25);
+}
+
+.form-wrapper textarea.form-control {
+    min-height: 150px;
+}
+
+.form-wrapper .custom-btn {
+    margin-top: 1rem;
+}
+
+/* Make form elements more spacious on mobile */
+@media (max-width: 768px) {
+    .form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .contact-highlights {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+}
+
+/* Mobile padding fixes */
+@media (max-width: 768px) {
+    .contact-intro,
+    .my-account,
+    .booking-intro {
+        padding-top: calc(var(--navbar-height) + 2rem) !important;
+    }
+    
+    /* Keep existing mobile styles */
+    .form-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .contact-highlights {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
+}
+
+.contact-success {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.success-card {
+    background: #F4F0EB;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    text-align: center;
+    font-size: 4rem;
+    color: #8B7355; /* Changed to match your site's brown/earthy color scheme */
+}
+
+.success-card h2 {
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.success-card p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.logout-section {
+    min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.auth-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.login-section {
+    min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.login-or {
+    text-align: center;
+    position: relative;
+}
+
+.login-or:before,
+.login-or:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background: #ddd;
+}
+
+.login-or:before {
+    left: 0;
+}
+
+.login-or:after {
+    right: 0;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+}
+
+.form-control:focus {
+    border-color: #8B7355;
+    box-shadow: 0 0 0 0.2rem rgba(139, 115, 85, 0.25);
+}
+
+.alert {
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* Login form styling */
+.login {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.login input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.login input:focus {
+    outline: none;
+    border-color: #8B7355;
+    box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.1);
+}
+
+.login button,
+.login a {
+    margin: 0.5rem;
+}
+
+/* Make the "Remember Me" label and checkbox align better */
+.login p:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.schedule-container {
+    margin: 2rem auto;
+    max-width: 1000px;
+}
+
+.schedule-image {
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Classes Page Styling */
+.welcome-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+
+.welcome-section h2 {
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.welcome-section .lead {
+    color: #666;
+    line-height: 1.6;
+}
+
+.class-cards-section {
+    padding: 2rem 0;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    background: #F4F0EB;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-section {
+    padding: 3rem 0;
+    background: #F4F0EB;
+    border-radius: 15px;
+    margin: 3rem 0;
+}
+
+.schedule-intro {
+    max-width: 800px;
+    margin: 3rem auto;
+    color: #666;
+    line-height: 1.6;
 }
 
 

@@ -6,8 +6,16 @@
 {% block content %}
 <section class="contact-success py-5">
     <div class="container">
-        <h2 class="text-center mb-4">Thank You!</h2>
-        <p class="text-center" role="alert" aria-live="polite">Your message has been sent successfully. We will get back to you soon.</p>
+        <div class="success-card">
+            <div class="success-icon mb-4">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="text-center mb-4">Thank You!</h2>
+            <p class="text-center" role="alert" aria-live="polite">Your message has been sent successfully. We will get back to you soon.</p>
+            <div class="text-center mt-4">
+                <a href="{% url 'index' %}" class="btn btn-outline-dark">Return Home</a>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock %}
