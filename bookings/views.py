@@ -19,6 +19,7 @@ def book_class(request):
             booking = form.save(commit=False)
             booking.user = request.user
             booking.save()
+            messages.success(request, f'Your booking for {booking.class_schedule.yoga_class.class_name} has been created successfully.')
             return redirect('my_bookings')
     else:
         form = BookingForm(user=request.user)
