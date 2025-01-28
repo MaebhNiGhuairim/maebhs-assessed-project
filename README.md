@@ -342,6 +342,7 @@ Follow these steps to deploy the project:
 - AI tools significantly reduced time spent on repetitive tasks, enabling more focus on refining user experience and accessibility.
 - Efficiency gains included streamlined debugging, comprehensive test coverage, and improved code maintainability.
 - AI improved my understanding of building a website, as I asked it to explain its reasoning often.
+- However, AI is not infallible. Often times, they do not scan the right files, or place the wrong urls in, as an example. It's important to know that you must rely on your own ability to code first
 
 ## Testing Summary
 
@@ -415,7 +416,7 @@ As part of ensuring the quality, accessibility, and performance of this project,
 - ![Lighthouse Desktop Results](/assets/desktop_lighthouse.png)
 - ![Lighthouse Mobile Results](/assets/mobile_lighthouse.png)
 
-### Upcoming
+### Future Features
 - Class waitlist system
 - Instructor dashboard
 - Integrated payment processing
