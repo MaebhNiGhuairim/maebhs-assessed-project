@@ -7,22 +7,37 @@
 {% block content %}
 <section class="my-account py-5">
     <div class="container">
-        <h2 class="text-center mb-4">My Account</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center mb-5">
+                <h2 class="account-title mb-3">Welcome to Your Account</h2>
+                <p class="lead">Manage your yoga journey with ease</p>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">My Bookings</h5>
-                        <p class="card-text">View and manage your bookings.</p>
-                        <a href="{% url 'my_bookings' %}" class="btn custom-btn w-100">My Bookings</a>
+                <div class="account-card d-flex flex-column">
+                    <div class="card-content flex-grow-1">
+                        <div class="card-icon mb-4">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h5 class="card-title mb-3">My Bookings</h5>
+                        <p class="card-text mb-4">View and manage your class bookings. Keep track of your upcoming sessions and your yoga journey.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{% url 'my_bookings' %}" class="btn custom-btn w-100">View My Bookings</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Logout</h5>
-                        <p class="card-text">Log out of your account.</p>
+                <div class="account-card d-flex flex-column">
+                    <div class="card-content flex-grow-1">
+                        <div class="card-icon mb-4">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </div>
+                        <h5 class="card-title mb-3">Account Settings</h5>
+                        <p class="card-text mb-4">Need to step away? You can safely log out of your account here.</p>
+                    </div>
+                    <div class="card-footer">
                         <a href="{% url 'account_logout' %}" class="btn custom-btn w-100">Logout</a>
                     </div>
                 </div>

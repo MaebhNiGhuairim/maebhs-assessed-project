@@ -16,6 +16,32 @@
     </div>
 </section>
 
+<section class="booking-intro py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Welcome to Your Yoga Journey</h2>
+                <p class="lead mb-3">We're delighted to help you find the perfect class for your practice. Whether you're just beginning or deepening your yoga experience, you'll find a class that resonates with you.</p>
+                <p class="mb-4">Take a moment to breathe and select your preferred class, time, and date below. Our experienced instructors are looking forward to guiding you through your practice.</p>
+                <div class="booking-highlights d-flex justify-content-center gap-4 mb-3">
+                    <div class="highlight">
+                        <i class="fas fa-clock mb-2"></i>
+                        <p>Classes for all schedules</p>
+                    </div>
+                    <div class="highlight">
+                        <i class="fas fa-heart mb-2"></i>
+                        <p>Welcoming environment</p>
+                    </div>
+                    <div class="highlight">
+                        <i class="fas fa-users mb-2"></i>
+                        <p>Expert instructors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="book-a-class py-5">
     <div class="container">
         {% if user.is_authenticated %}
@@ -92,6 +118,11 @@
             {% endif %}
         </div>
     </div>
+</section>
+
+<section class="booking-policy"></section>
+    <H3>Booking Policy</H3>
+    <p>Please note that class doors open 15 minutes before the start of the class, and close once the class has started. If you are late, you will not be allowed to enter the class.</p>
 </section>
 
 <div id="api-urls" 

@@ -5,19 +5,45 @@
 {% block title %}Contact Us - The Yoga Loft{% endblock %}
 
 {% block content %}
-<section class="contact py-5">
-  <div class="container">
-      <h2 class="text-center mb-4">Contact Us</h2>
-      <div class="row justify-content-center">
-          <div class="col-md-6">
-              <form method="post" aria-label="Contact form">
-                  {% csrf_token %}
-                  {{ form|crispy }}
-                  <button type="submit" class="btn custom-btn w-100" aria-label="Send contact message">Send Message</button>
-              </form>
-          </div>
-      </div>
-  </div>
+<section class="contact-intro py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">Get in Touch</h2>
+                <p class="lead mb-4">We're here to help you on your yoga journey. Have questions or feedback? We'd love to hear from you.</p>
+                <div class="contact-highlights d-flex justify-content-center gap-4 mb-5">
+                    <div class="highlight">
+                        <i class="fas fa-envelope mb-2"></i>
+                        <p>Quick Response</p>
+                    </div>
+                    <div class="highlight">
+                        <i class="fas fa-heart mb-2"></i>
+                        <p>Friendly Support</p>
+                    </div>
+                    <div class="highlight">
+                        <i class="fas fa-comments mb-2"></i>
+                        <p>Open Dialogue</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-form py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-wrapper">
+                    <form method="post" aria-label="Contact form">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn custom-btn w-100" aria-label="Send contact message">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
