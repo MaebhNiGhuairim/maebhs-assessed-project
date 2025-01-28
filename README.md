@@ -162,6 +162,9 @@ Users can view their current and past bookings in their profile, helping them ke
 ### Edit & Delete Bookings
 Users have the ability to modify or cancel their bookings directly from their profile, providing flexibility in managing their class schedule. They are warned before deleting bookings. When they edit bookings, the date of their current booking is not available to them in the drop down. If they try to book a class they have already booked, they get a message saying they've already booked a class on that day. This prevents duplicate bookings.
 
+### Shape dividers
+I used shape dividers to improve the flow of the website. I would've used it more across the site if I had more time.
+
 
 
 
@@ -285,8 +288,20 @@ Follow these steps to deploy the project:
 
 ## Tech Stack
 **Frontend:** HTML5, CSS3, JavaScript  
-**Backend:** Django 4.2, PostgreSQL  
-**Tools:** Crispy Forms, Django REST Framework, WhiteNoise 
+<br>
+**Backend:** Django 4.2, PostgreSQL, Python
+<br>
+**Tools:** Crispy Forms, Django REST Framework, WhiteNoise, Bootstrap
+<br>
+**External Tools:**
+- [Shape Dividers](https://www.shapedivider.app/) for better flow
+- Balsamiq for wireframes
+- Favicon.io for favicon
+- Font Awesome for icons across the site
+- GitHub - Version control and repo storage
+- Google Fonts
+
+
 
 ## AI Implementation and Orchestration
 
@@ -326,6 +341,7 @@ Follow these steps to deploy the project:
 ### Overall Impact:
 - AI tools significantly reduced time spent on repetitive tasks, enabling more focus on refining user experience and accessibility.
 - Efficiency gains included streamlined debugging, comprehensive test coverage, and improved code maintainability.
+- AI improved my understanding of building a website, as I asked it to explain its reasoning often.
 
 ## Testing Summary
 
