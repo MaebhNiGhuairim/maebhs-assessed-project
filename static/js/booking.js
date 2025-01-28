@@ -1,69 +1,102 @@
 // Updated booking.js
 document.addEventListener("DOMContentLoaded", function () {
-    const yogaClassDropdown = document.getElementById('yoga_class');
-    const scheduleDropdown = document.getElementById('class_schedule');
-    const dateDropdown = document.getElementById('booking_date');
-
-    // Get API URLs from hidden div ======== NEW CODE ========
+    const yogaClassSelect = document.getElementById('yoga_class');
+    const scheduleSelect = document.getElementById('class_schedule');
+    const dateSelect = document.getElementById('booking_date');
     const apiUrls = document.getElementById('api-urls').dataset;
-    // =======================================================
 
-    if (yogaClassDropdown && scheduleDropdown && dateDropdown) {
-        yogaClassDropdown.addEventListener('change', function () {
+    // Function to reset dependent fields
+    function resetDependentFields(fromSchedule = false) {
+        if (!fromSchedule) {
+            scheduleSelect.innerHTML = '<option value="">Select a time</option>';
+            scheduleSelect.disabled = true;
+        }
+        dateSelect.innerHTML = '<option value="">Select a date</option>';
+        dateSelect.disabled = true;
+    }
+
+    if (yogaClassSelect && scheduleSelect && dateSelect) {
+        yogaClassSelect.addEventListener('change', function () {
             const classId = this.value;
+            resetDependentFields();
+
             if (classId) {
-                // Modified fetch URL ======== UPDATED CODE ========
+                // Replace the '0' in the URL with the actual class ID
                 const schedulesUrl = apiUrls.schedulesUrl.replace('0', classId);
+                
                 fetch(schedulesUrl)
-                // =================================================
-                    .then(response => {
-                        if (!response.ok) throw new Error('Network response was not ok');
-                        return response.json();
-                    })
+                    .then(response => response.json())
                     .then(data => {
-                        scheduleDropdown.innerHTML = '<option value="">Select a day and time</option>';
+                        scheduleSelect.innerHTML = '<option value="">Select a time</option>';
                         data.schedules.forEach(schedule => {
                             const option = document.createElement('option');
                             option.value = schedule.id;
                             option.textContent = `${schedule.day_of_week} at ${schedule.start_time}`;
-                            scheduleDropdown.appendChild(option);
+                            scheduleSelect.appendChild(option);
                         });
-                        scheduleDropdown.disabled = false;
+                        scheduleSelect.disabled = false;
                     })
-                    .catch(error => console.error('Error fetching schedules:', error));
-            } else {
-                scheduleDropdown.innerHTML = '<option value="">Select a day and time</option>';
-                scheduleDropdown.disabled = true;
+                    .catch(error => console.error('Error:', error));
             }
         });
 
-        scheduleDropdown.addEventListener('change', function () {
+        scheduleSelect.addEventListener('change', function() {
             const scheduleId = this.value;
+            dateSelect.innerHTML = '<option value="">Select a date</option>';
+            dateSelect.disabled = true;
+
             if (scheduleId) {
-                // ========== UPDATED FETCH CALL ==========
                 fetch(`${apiUrls.datesUrl}?schedule_id=${scheduleId}`)
-                    .then(response => {
-                        if (!response.ok) throw new Error('Failed to fetch dates');
-                        return response.json();
-                    })
+                    .then(response => response.json())
                     .then(data => {
-                        dateDropdown.innerHTML = '<option value="">Select a date</option>';
                         data.dates.forEach(date => {
+                            const dateObj = new Date(date);
+                            const formattedDate = dateObj.toLocaleDateString('en-GB', {
+                                weekday: 'long',
+                                day: '2-digit',
+                                month: 'long',
+                                year: 'numeric'
+                            });
                             const option = document.createElement('option');
-                            option.value = date;
-                            option.textContent = date;
-                            dateDropdown.appendChild(option);
+                            option.value = date;  // Keep the YYYY-MM-DD format for the value
+                            option.textContent = formattedDate;
+                            dateSelect.appendChild(option);
                         });
-                        dateDropdown.disabled = false;
+                        dateSelect.disabled = false;
                     })
-                    .catch(error => {
-                        console.error('Error fetching available dates:', error);
-                        dateDropdown.innerHTML = '<option value="">Error loading dates</option>';
-                    });
-            } else {
-                dateDropdown.innerHTML = '<option value="">Select a date</option>';
-                dateDropdown.disabled = true;
+                    .catch(error => console.error('Error:', error));
             }
+        });
+
+        // If there are pre-selected values (e.g., after form validation error)
+        if (yogaClassSelect.value) {
+            yogaClassSelect.dispatchEvent(new Event('change'));
+            // Wait for the schedules to load before triggering date population
+            setTimeout(() => {
+                if (scheduleSelect.value) {
+                    scheduleSelect.dispatchEvent(new Event('change'));
+                }
+            }, 500);
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const classeshero = document.querySelector('.classes-hero');
+    console.log(classeshero)
+    if (classeshero) {
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const paragraph = this.querySelector('.card-paragraph');
+                if (paragraph.style.display === 'block') {
+                    paragraph.style.display = 'none';
+                } else {
+                    paragraph.style.display = 'block';
+                }
+            });
         });
     }
 });
+

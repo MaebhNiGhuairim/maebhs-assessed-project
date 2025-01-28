@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="container py-5">
+    <h2>Edit Booking</h2>
+    <p>Editing {{ booking.class_schedule.yoga_class.class_name }} - {{ booking.class_schedule.day_of_week }} at {{ booking.class_schedule.start_time }}</p>
+    
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>Select New Date:</label>
+            <select name="booking_date" class="form-control">
+                {% for date in valid_dates %}
+                    <option value="{{ date|date:'Y-m-d' }}" 
+                        {% if date.date == booking.booking_date %}selected{% endif %}>
+                        {{ date|date:"D, d M Y" }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a href="{% url 'my_bookings' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</section>
+{% endblock %}
+

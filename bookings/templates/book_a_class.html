@@ -8,7 +8,7 @@
 {% block content %}
 
 <section class="booking-hero position-relative">
-    <div class="container-fluid p-0">
+    <div class="container-fluid yoga-class p-0">
         <img src="{% static 'images/booking.jpg' %}" class="img-fluid w-100" alt="A yoga class in progress">
         <div class="hero-text">
             <h2 class="display-4">Booking</h2>
@@ -23,38 +23,44 @@
             <div class="col-md-6">
                 <form method="post">
                     {% csrf_token %}
-                    <div class="mb-3">
-                        <label for="yoga_class" class="form-label">Select a Class</label>
-                        <select id="yoga_class" name="yoga_class" class="form-control">
-                            <option value="">Select a class</option>
-                            {% for yoga_class in yoga_classes %}
-                            <option value="{{ yoga_class.id }}">{{ yoga_class.class_name }}</option>
-                            {% endfor %}
-                        </select>
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {{ form.non_field_errors }}
                     </div>
-                    
+                    {% endif %}
+
                     <div class="mb-3">
-                        <label for="class_schedule" class="form-label">Day and Time</label>
-                        <select id="class_schedule" name="class_schedule" class="form-control" disabled>
-                            <option value="">Select a day and time</option>
-                        </select>
+                        <label for="{{ form.yoga_class.id_for_label }}" class="form-label">Select a Class</label>
+                        {{ form.yoga_class }}
+                        {% if form.yoga_class.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.yoga_class.errors }}
+                        </div>
+                        {% endif %}
                     </div>
-                
+
                     <div class="mb-3">
-                        <label for="booking_date" class="form-label">Select a Date</label>
-                        <select id="booking_date" name="booking_date" class="form-control" disabled>
-                            <option value="">Select a date</option>
-                        </select>
+                        <label for="{{ form.class_schedule.id_for_label }}" class="form-label">Select a Time</label>
+                        {{ form.class_schedule }}
+                        {% if form.class_schedule.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.class_schedule.errors }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.booking_date.id_for_label }}" class="form-label">Select a Date</label>
+                        {{ form.booking_date }}
+                        {% if form.booking_date.errors %}
+                        <div class="invalid-feedback d-block">
+                            {{ form.booking_date.errors }}
+                        </div>
+                        {% endif %}
                     </div>
                     
                     <button type="submit" class="btn custom-btn w-100">Book Now</button>
                 </form>
-                <div id="api-urls" 
-                data-schedules-url="{% url 'get_class_schedules' 0 %}" 
-                data-dates-url="{% url 'get_valid_dates' %}"
-                style="display: none;">
-           </div>
-                
             </div>
         </div>
         {% endif %}
@@ -87,6 +93,12 @@
         </div>
     </div>
 </section>
+
+<div id="api-urls" 
+     data-schedules-url="{% url 'get_class_schedules' 0 %}"
+     data-dates-url="{% url 'get_valid_dates' %}"
+     style="display: none;">
+</div>
 
 <script id="class_schedules_data" type="application/json">{{ class_schedules|safe }}</script>
 <script src="{% static 'js/booking.js' %}"></script>

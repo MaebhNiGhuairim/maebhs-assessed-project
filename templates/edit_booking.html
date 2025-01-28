@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4">Editing {{ booking.class_schedule.yoga_class.class_name }} - {{ booking.class_schedule.day_of_week }} at {{ booking.class_schedule.start_time }}</h2>
+
+            {% if messages %}
+            <div class="messages mb-4">
+                {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group mb-4">
+                    <label for="booking_date" class="form-label">Select New Date:</label>
+                    <select name="booking_date" required>
+                        <option value="">Select New Date</option>
+                        {% for date_value, date_display in valid_dates %}
+                            <option value="{{ date_value }}">{{ date_display }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <a href="{% url 'my_bookings' %}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %} 
