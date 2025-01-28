@@ -135,6 +135,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+# This will disable the "Successfully signed in" message
+ACCOUNT_MESSAGES = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
