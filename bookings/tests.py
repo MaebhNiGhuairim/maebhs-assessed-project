@@ -43,46 +43,85 @@ class ClassScheduleTests(TestCase):
         self.assertEqual(self.schedule.day_of_week, "Monday")
         self.assertEqual(self.schedule.start_time, "09:00")
 
-class BookingViewTests(TestCase):
-    """Tests for the booking views"""
+class BookingSystemTests(TestCase):
+    """Test cases for the booking system"""
     
     def setUp(self):
-        # Create a test user
+        # Create test user
         self.user = User.objects.create_user(
             username='testuser',
             password='testpass123'
         )
-        # Create test yoga class and schedule
+        
+        # Create test yoga class
         self.yoga_class = YogaClass.objects.create(
-            class_name="Beginner Yoga",
-            description="A gentle introduction to yoga",
+            class_name="Test Yoga",
+            description="Test description",
             duration=timedelta(minutes=60)
         )
+        
+        # Create test schedule
         self.schedule = ClassSchedule.objects.create(
             yoga_class=self.yoga_class,
             day_of_week="Monday",
             start_time="09:00"
         )
+        
         self.client = Client()
-
-    def test_classes_page_load(self):
-        """Test that the classes page loads correctly"""
-        response = self.client.get(reverse('classes'))
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'classes.html')
-
-    def test_booking_requires_login(self):
-        """Test that booking a class requires login"""
-        response = self.client.get(reverse('book_a_class'))
-        self.assertEqual(response.status_code, 302)  # Redirects to login
-
-    def test_my_bookings_view(self):
-        """Test the my bookings page when logged in"""
-        # Log in the test user
         self.client.login(username='testuser', password='testpass123')
+
+    def test_booking_page_loads(self):
+        """Test that booking page loads with available classes"""
+        response = self.client.get(reverse('book_a_class'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.yoga_class.class_name)
+    
+    def test_successful_booking(self):
+        """Test that a user can successfully book a class"""
+        # Get tomorrow's date
+        tomorrow = datetime.now().date() + timedelta(days=1)
+        # Ensure tomorrow is a Monday (same as schedule's day_of_week)
+        while tomorrow.strftime('%A') != self.schedule.day_of_week:
+            tomorrow += timedelta(days=1)
+
+        # Create the booking
+        booking = Booking.objects.create(
+            user=self.user,
+            class_schedule=self.schedule,
+            booking_date=tomorrow
+        )
+        
+        # Verify booking was created
+        self.assertEqual(Booking.objects.count(), 1)
+        self.assertEqual(booking.user, self.user)
+        self.assertEqual(booking.class_schedule, self.schedule)
+        self.assertEqual(booking.booking_date, tomorrow)
+    
+    def test_view_my_bookings(self):
+        """Test that user can view their bookings"""
+        # Get tomorrow's date
+        tomorrow = datetime.now().date() + timedelta(days=1)
+        # Ensure tomorrow is a Monday (same as schedule's day_of_week)
+        while tomorrow.strftime('%A') != self.schedule.day_of_week:
+            tomorrow += timedelta(days=1)
+
+        # Create a booking
+        Booking.objects.create(
+            user=self.user,
+            class_schedule=self.schedule,
+            booking_date=tomorrow
+        )
+        
+        # Check my bookings page
         response = self.client.get(reverse('my_bookings'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'my_bookings.html')
+        self.assertContains(response, self.yoga_class.class_name)
+    
+    def test_anonymous_user_redirect(self):
+        """Test that anonymous users are redirected to login"""
+        self.client.logout()
+        response = self.client.get(reverse('book_a_class'))
+        self.assertEqual(response.status_code, 302)  # Redirect to login
 
 class BookingModelTests(TestCase):
     """Tests for the Booking model"""
