@@ -29,8 +29,10 @@ The Yoga Loft is a web application designed to simplify yoga class scheduling an
     - [Use Cases and Reflections](#use-cases-and-reflections)  
 12. [Testing Summary](#testing-summary)  
     - [Manual Testing](#manual-testing)  
-    - [Automated Testing](#automated-testing)  
-13. [Upcoming Features](#upcoming-features)  
+    - [Automated Testing](#automated-testing)
+13. [Validation](#validation)
+     
+14. [Upcoming Features](#upcoming-features)  
 
 
 
@@ -280,6 +282,44 @@ Follow these steps to deploy the project:
   - Tools Used: [Mention any testing frameworks or tools, e.g., Django TestCase.]
   - Features Covered: [Briefly list features covered by automated tests.]
   - Adjustments Made: [Describe any manual corrections to AI-generated test cases, particularly for accessibility.]
+ 
+## Validation
+
+As part of ensuring the quality, accessibility, and performance of this project, I conducted several validation checks on the codebase using industry-standard tools. Below are the results and tools used:
+
+### 1. HTML Validation
+- **Tool**: [W3C Markup Validation Service](https://validator.w3.org/)
+- The HTML for this project was validated using the W3C Markup Validation Service to ensure proper syntax and structure.
+- **Result**: The HTML passed validation successfully.
+- ![HTML Validation Results](/assets/html_validation.png)
+
+### 2. CSS Validation
+- **Tool**: [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+- The CSS was validated using the W3C CSS Validation Service to check for errors and adherence to standards.
+- **Result**: The CSS passed validation without any issues.
+- ![CSS Validation Results](/assets/css_validation.png)
+
+### 3. JavaScript Validation
+- **Tool**: [JSHint](https://jshint.com/)
+- The JavaScript code was validated using JSHint to ensure clean and error-free scripting.
+- **Result**: No major issues were found in the JavaScript. I had a number of ES6 warnings. These warnings can be ignored because they relate to ES6 features (const, arrow functions, template literals, etc.), which are fully supported by modern browsers. As this project targets modern environments, ES6 is safe and improves code readability and maintainability.
+- ![JavaScript Validation Results](/assets/javascript_validator.png)
+
+### 4. Contrast and Accessibility
+- **Tool**: [WAVE Contrast Checker](https://wave.webaim.org/)
+- The site’s accessibility and contrast ratios were checked using the WAVE tool to ensure compliance with WCAG standards.
+- **Result**: Whilst my results were mostly good, I did have some contrast errors that related to my book a class button, and the text at the bottom of my homepage. If I gave myself a little more time, I would've made the text at the bottom of the homepage larger, and darkened the book a class button.
+- ![WAVE Contrast Checker Results](/assets/contrast_checker.png)
+
+### 5. Performance and Accessibility Audit
+- **Tool**: [Google Lighthouse](https://developers.google.com/web/tools/lighthouse)
+- The project underwent a Lighthouse audit for performance, accessibility, and best practices.
+- **Result**:
+  - **Desktop**: Achieved excellent results across all metrics. My accessibiility could've been improved with changing the colour of the book a class button.
+  - **Mobile**: Scored **88** for performance due to image formatting issues.
+  - If I had more time, I would reformat the images to optimize performance further.
+- ![Lighthouse Desktop Results](/assets/desktop_lighthouse.png)
+- ![Lighthouse Mobile Results](/assets/mobile_lighthouse.png)
 
 ### Upcoming
 - Class waitlist system
