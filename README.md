@@ -318,8 +318,8 @@ As part of ensuring the quality, accessibility, and performance of this project,
   - **Desktop**: Achieved excellent results across all metrics. My accessibiility could've been improved with changing the colour of the book a class button.
   - **Mobile**: Scored **88** for performance due to image formatting issues.
   - If I had more time, I would reformat the images to optimize performance further.
-- ![Lighthouse Desktop Results](/assests/desktop_lighthouse.png)
-- ![Lighthouse Mobile Results](path-to-lighthouse-mobile-screenshot.png)
+- ![Lighthouse Desktop Results](/assets/desktop_lighthouse.png)
+- ![Lighthouse Mobile Results](/assets/mobile_lighthouse.png)
 
 ### Upcoming
 - Class waitlist system
